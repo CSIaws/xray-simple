@@ -7,5 +7,8 @@ RUN mkdir /usr/local/openresty/site/lualib/lua && mkdir /usr/local/openresty/lua
 COPY nginx.conf   /usr/local/openresty/nginx/conf/nginx.conf
 COPY openidc.lua  /usr/local/openresty/site/lualib/lua
 COPY http.lua     /usr/local/openresty/site/lualib/resty/
+COPY http_connect.lua     /usr/local/openresty/site/lualib/resty/
+COPY http_headers.lua     /usr/local/openresty/site/lualib/resty/
+
 
 CMD ["/usr/bin/openresty", "-g", "daemon off;"]
