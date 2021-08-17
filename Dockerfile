@@ -6,5 +6,6 @@ RUN  yum install -y openresty  && yum install -y openresty-resty
 RUN mkdir /usr/local/openresty/site/lualib/lua && mkdir /usr/local/openresty/lualib/resty/session
 COPY nginx.conf   /usr/local/openresty/nginx/conf/nginx.conf
 COPY openidc.lua  /usr/local/openresty/site/lualib/lua
+COPY http.lua  /usr/local/openresty/site/lualib/lua
 
 CMD ["/usr/bin/openresty", "-g", "daemon off;"]
